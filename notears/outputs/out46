@@ -1,0 +1,361 @@
+samples  5000  graph  12 24 ER mim  minibatch size  50  noise  0.5  minibatches per NN training  250 quantile adaptive clipping
+cuda
+cuda
+iteration 1 in inner loop,alpha 0.0 rho 1.0 h 1.3547868753222367
+iteration 1 in outer loop, alpha = 1.3547868753222367, rho = 1.0, h = 1.3547868753222367
+cuda
+iteration 1 in inner loop,alpha 1.3547868753222367 rho 1.0 h 0.8318017776157465
+iteration 2 in inner loop,alpha 1.3547868753222367 rho 10.0 h 0.3389919481792134
+iteration 3 in inner loop,alpha 1.3547868753222367 rho 100.0 h 0.09244439604472277
+iteration 2 in outer loop, alpha = 10.599226479794513, rho = 100.0, h = 0.09244439604472277
+cuda
+iteration 1 in inner loop,alpha 10.599226479794513 rho 100.0 h 0.04713402619085372
+iteration 2 in inner loop,alpha 10.599226479794513 rho 1000.0 h 0.013466270810381431
+iteration 3 in outer loop, alpha = 24.065497290175944, rho = 1000.0, h = 0.013466270810381431
+cuda
+iteration 1 in inner loop,alpha 24.065497290175944 rho 1000.0 h 0.0066081900976673325
+iteration 2 in inner loop,alpha 24.065497290175944 rho 10000.0 h 0.00209394708955557
+iteration 4 in outer loop, alpha = 45.00496818573164, rho = 10000.0, h = 0.00209394708955557
+cuda
+iteration 1 in inner loop,alpha 45.00496818573164 rho 10000.0 h 0.0008565849994432995
+iteration 2 in inner loop,alpha 45.00496818573164 rho 100000.0 h 0.0003074876359292489
+iteration 5 in outer loop, alpha = 75.75373177865653, rho = 100000.0, h = 0.0003074876359292489
+cuda
+iteration 1 in inner loop,alpha 75.75373177865653 rho 100000.0 h 0.00016878818824750397
+iteration 6 in outer loop, alpha = 244.54192002616048, rho = 1000000.0, h = 0.00016878818824750397
+Threshold 0.3
+[[0.005 0.    0.67  0.004 0.54  0.001 0.07  0.    0.    0.135 0.001 0.003]
+ [2.083 0.002 0.439 0.155 0.105 0.002 0.097 0.001 0.    0.75  0.271 1.258]
+ [0.004 0.001 0.005 0.011 0.442 0.    0.053 0.    0.    0.561 0.002 0.004]
+ [0.045 0.    0.055 0.002 0.15  0.002 0.804 0.    0.    0.896 0.    0.322]
+ [0.005 0.001 0.005 0.005 0.004 0.    0.803 0.    0.    0.61  0.002 0.001]
+ [0.046 0.042 0.638 0.037 0.019 0.    0.058 0.002 0.002 0.018 0.009 0.084]
+ [0.004 0.    0.002 0.001 0.001 0.001 0.003 0.    0.    0.016 0.    0.001]
+ [3.155 0.028 0.707 0.029 0.07  0.004 0.847 0.    0.004 0.003 0.025 0.081]
+ [0.165 2.38  0.04  2.097 0.161 0.002 0.798 0.001 0.    0.967 3.469 0.037]
+ [0.002 0.001 0.002 0.001 0.003 0.002 0.01  0.    0.    0.005 0.    0.001]
+ [0.17  0.005 0.016 2.475 0.029 0.002 0.077 0.002 0.    0.116 0.003 0.899]
+ [0.219 0.001 0.007 0.001 0.026 0.001 1.052 0.001 0.    0.093 0.001 0.004]]
+[[0.    0.    0.67  0.    0.54  0.    0.    0.    0.    0.    0.    0.   ]
+ [2.083 0.    0.439 0.    0.    0.    0.    0.    0.    0.75  0.    1.258]
+ [0.    0.    0.    0.    0.442 0.    0.    0.    0.    0.561 0.    0.   ]
+ [0.    0.    0.    0.    0.    0.    0.804 0.    0.    0.896 0.    0.322]
+ [0.    0.    0.    0.    0.    0.    0.803 0.    0.    0.61  0.    0.   ]
+ [0.    0.    0.638 0.    0.    0.    0.    0.    0.    0.    0.    0.   ]
+ [0.    0.    0.    0.    0.    0.    0.    0.    0.    0.    0.    0.   ]
+ [3.155 0.    0.707 0.    0.    0.    0.847 0.    0.    0.    0.    0.   ]
+ [0.    2.38  0.    2.097 0.    0.    0.798 0.    0.    0.967 3.469 0.   ]
+ [0.    0.    0.    0.    0.    0.    0.    0.    0.    0.    0.    0.   ]
+ [0.    0.    0.    2.475 0.    0.    0.    0.    0.    0.    0.    0.899]
+ [0.    0.    0.    0.    0.    0.    1.052 0.    0.    0.    0.    0.   ]]
+{'fdr': 0.08, 'tpr': 0.9583333333333334, 'fpr': 0.047619047619047616, 'f1': 0.9387755102040817, 'shd': 2, 'npred': 25, 'ntrue': 24}
+[3.444e-04 6.699e-01 3.883e-03 5.397e-01 5.918e-04 6.956e-02 2.897e-06
+ 5.281e-06 1.352e-01 8.404e-04 3.229e-03 2.083e+00 4.389e-01 1.550e-01
+ 1.054e-01 1.997e-03 9.750e-02 6.360e-04 6.539e-05 7.501e-01 2.712e-01
+ 1.258e+00 3.683e-03 9.039e-04 1.121e-02 4.416e-01 6.858e-05 5.348e-02
+ 4.637e-05 3.173e-05 5.615e-01 2.368e-03 3.680e-03 4.491e-02 4.202e-04
+ 5.531e-02 1.501e-01 1.646e-03 8.041e-01 3.512e-04 1.727e-05 8.956e-01
+ 2.768e-04 3.223e-01 4.723e-03 1.198e-03 5.158e-03 5.480e-03 4.826e-04
+ 8.032e-01 4.312e-05 3.288e-05 6.095e-01 1.738e-03 6.230e-04 4.567e-02
+ 4.233e-02 6.385e-01 3.668e-02 1.885e-02 5.759e-02 1.987e-03 2.189e-03
+ 1.815e-02 9.470e-03 8.433e-02 3.773e-03 4.501e-04 2.192e-03 6.780e-04
+ 1.194e-03 6.486e-04 2.495e-05 3.264e-06 1.562e-02 2.643e-04 1.139e-03
+ 3.155e+00 2.830e-02 7.073e-01 2.911e-02 7.019e-02 3.663e-03 8.467e-01
+ 3.637e-03 3.313e-03 2.489e-02 8.074e-02 1.647e-01 2.380e+00 3.954e-02
+ 2.097e+00 1.607e-01 2.255e-03 7.981e-01 5.871e-04 9.669e-01 3.469e+00
+ 3.731e-02 1.886e-03 8.093e-04 2.181e-03 8.467e-04 3.059e-03 2.281e-03
+ 1.023e-02 5.563e-05 4.655e-06 2.978e-04 1.135e-03 1.701e-01 4.950e-03
+ 1.650e-02 2.475e+00 2.858e-02 2.201e-03 7.723e-02 2.296e-03 8.602e-06
+ 1.165e-01 8.991e-01 2.188e-01 6.794e-04 6.664e-03 7.635e-04 2.619e-02
+ 6.357e-04 1.052e+00 5.712e-04 2.933e-06 9.348e-02 1.244e-03]
+[[0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 0.]
+ [1. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 1.]
+ [0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0.]
+ [0. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0.]
+ [0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0.]
+ [0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+ [1. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0.]
+ [0. 1. 0. 1. 0. 0. 1. 0. 0. 1. 1. 0.]
+ [0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0.]
+ [0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1.]
+ [0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0.]]
+[0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0.
+ 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 0.
+ 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.
+ 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 1. 0.
+ 1. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0.
+ 1. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0.]
+aucroc, aucpr (0.9780092592592593, 0.9638945746282703)
+cuda
+noise_multiplier  0.5  noise_multiplier_b  2.5  noise_multiplier_delta  0.502518907629606
+cuda
+Objective function 178.80 = squared loss an data 15.69 + 0.5*rho*h**2 162.682537 + alpha*h 0.000000 + L2reg 0.22 + L1reg 0.21 ; SHD = 78 ; DAG False
+total norm for a microbatch 104.65180044600986 clip 1.205447801387531
+total norm for a microbatch 8.1874061725787 clip 7.743792416656477
+total norm for a microbatch 9.839583021968425 clip 7.5303022944288855
+total norm for a microbatch 11.287913433568658 clip 7.84040635400352
+total norm for a microbatch 8.377610983870564 clip 8.091600777999846
+total norm for a microbatch 10.327710755174545 clip 7.379230427159025
+total norm for a microbatch 9.637141823327443 clip 8.553911560730164
+total norm for a microbatch 11.578474541710488 clip 8.10528216658178
+total norm for a microbatch 11.674808458609789 clip 8.560040221994203
+total norm for a microbatch 17.45647490038985 clip 7.820741714456023
+total norm for a microbatch 17.067466920989805 clip 8.548783540758887
+total norm for a microbatch 11.53867850975426 clip 8.395871332435526
+total norm for a microbatch 12.278822381804806 clip 8.741751666344785
+total norm for a microbatch 6.876039737778665 clip 8.328220529905618
+total norm for a microbatch 8.403100385690454 clip 8.233671876061221
+total norm for a microbatch 20.404270476230522 clip 8.853763780426089
+cuda
+Objective function 7.22 = squared loss an data 5.93 + 0.5*rho*h**2 0.752661 + alpha*h 0.000000 + L2reg 0.45 + L1reg 0.09 ; SHD = 26 ; DAG False
+Proportion of microbatches that were clipped  0.7960351357885406
+iteration 1 in inner loop, alpha 0.0 rho 1.0 h 1.2269156631493523
+iteration 1 in outer loop, alpha = 1.2269156631493523, rho = 1.0, h = 1.2269156631493523
+cuda
+noise_multiplier  0.5  noise_multiplier_b  2.5  noise_multiplier_delta  0.502518907629606
+cuda
+Objective function 8.73 = squared loss an data 5.93 + 0.5*rho*h**2 0.752661 + alpha*h 1.505322 + L2reg 0.45 + L1reg 0.09 ; SHD = 26 ; DAG False
+total norm for a microbatch 8.150460680141984 clip 4.117606474928772
+total norm for a microbatch 7.529416487307721 clip 9.799881578438
+total norm for a microbatch 14.529366021816307 clip 10.360790029869957
+total norm for a microbatch 14.682504695131811 clip 11.0660570959478
+total norm for a microbatch 11.533043479826075 clip 11.33115567962979
+total norm for a microbatch 18.78223162369914 clip 10.824963403679954
+cuda
+Objective function 7.65 = squared loss an data 5.54 + 0.5*rho*h**2 0.298104 + alpha*h 0.947357 + L2reg 0.78 + L1reg 0.08 ; SHD = 24 ; DAG False
+Proportion of microbatches that were clipped  0.7954490044697278
+iteration 1 in inner loop, alpha 1.2269156631493523 rho 1.0 h 0.7721450273485182
+noise_multiplier  0.5  noise_multiplier_b  2.5  noise_multiplier_delta  0.502518907629606
+cuda
+Objective function 10.33 = squared loss an data 5.54 + 0.5*rho*h**2 2.981040 + alpha*h 0.947357 + L2reg 0.78 + L1reg 0.08 ; SHD = 24 ; DAG False
+total norm for a microbatch 33.503072923692784 clip 2.2242237031148435
+total norm for a microbatch 12.685799055116405 clip 5.43217617559517
+total norm for a microbatch 16.52109755438335 clip 12.689605430989019
+total norm for a microbatch 16.826804739230333 clip 12.932884926256847
+total norm for a microbatch 21.24043363413857 clip 12.738554389090309
+total norm for a microbatch 22.29102355072177 clip 13.570864269738228
+total norm for a microbatch 16.469394614114183 clip 13.473471389694051
+total norm for a microbatch 8.225289457948005 clip 13.145792466365636
+total norm for a microbatch 7.5659700343370595 clip 12.620596919572154
+total norm for a microbatch 20.004338562782152 clip 13.152990566401304
+total norm for a microbatch 26.18988950321974 clip 12.937009672224804
+total norm for a microbatch 17.747943303519637 clip 13.268772999955885
+total norm for a microbatch 13.760283264923997 clip 12.939929024913868
+total norm for a microbatch 10.505646172915243 clip 12.417952729096095
+total norm for a microbatch 25.219236388307667 clip 13.572424178081368
+total norm for a microbatch 20.122031332362265 clip 13.076694846931742
+total norm for a microbatch 32.669702289636405 clip 12.325212851494728
+total norm for a microbatch 18.93520666664398 clip 12.86862348484966
+total norm for a microbatch 14.267608368897116 clip 12.86862348484966
+cuda
+Objective function 8.51 = squared loss an data 6.65 + 0.5*rho*h**2 0.488130 + alpha*h 0.383352 + L2reg 0.91 + L1reg 0.07 ; SHD = 23 ; DAG True
+Proportion of microbatches that were clipped  0.7991780159561609
+iteration 2 in inner loop, alpha 1.2269156631493523 rho 10.0 h 0.3124514675651149
+noise_multiplier  0.5  noise_multiplier_b  2.5  noise_multiplier_delta  0.502518907629606
+cuda
+Objective function 12.90 = squared loss an data 6.65 + 0.5*rho*h**2 4.881296 + alpha*h 0.383352 + L2reg 0.91 + L1reg 0.07 ; SHD = 23 ; DAG True
+total norm for a microbatch 21.273532473668123 clip 1.1010023623233276
+total norm for a microbatch 21.154736532345392 clip 2.302472466854944
+total norm for a microbatch 22.06827619368367 clip 4.602752338199423
+total norm for a microbatch 19.080894510760682 clip 5.0462793083214805
+total norm for a microbatch 26.004962433289915 clip 14.610888460012024
+total norm for a microbatch 20.335574557136418 clip 15.499944367919618
+total norm for a microbatch 12.382699124962905 clip 14.669509938902305
+total norm for a microbatch 20.940884533784356 clip 14.069894500215348
+total norm for a microbatch 26.40480089062809 clip 14.460174213957831
+total norm for a microbatch 13.003710511198909 clip 15.651445722072793
+total norm for a microbatch 14.622703644836108 clip 13.985213106545173
+total norm for a microbatch 13.854867368370304 clip 14.454617283988606
+total norm for a microbatch 18.393902732250073 clip 14.53045669771758
+total norm for a microbatch 33.512331583259474 clip 14.020584650488068
+total norm for a microbatch 24.085541792716956 clip 15.161787003775856
+total norm for a microbatch 23.035128943685223 clip 14.759428130290411
+total norm for a microbatch 34.50546221441629 clip 14.16950107818749
+total norm for a microbatch 21.834799811611173 clip 14.214960367355747
+total norm for a microbatch 28.892155370091412 clip 14.677090649447072
+cuda
+Objective function 9.54 = squared loss an data 7.98 + 0.5*rho*h**2 0.448713 + alpha*h 0.116229 + L2reg 0.93 + L1reg 0.06 ; SHD = 20 ; DAG True
+Proportion of microbatches that were clipped  0.7983097675930441
+iteration 3 in inner loop, alpha 1.2269156631493523 rho 100.0 h 0.09473253536467752
+iteration 2 in outer loop, alpha = 10.700169199617104, rho = 100.0, h = 0.09473253536467752
+cuda
+noise_multiplier  0.5  noise_multiplier_b  2.5  noise_multiplier_delta  0.502518907629606
+cuda
+Objective function 10.44 = squared loss an data 7.98 + 0.5*rho*h**2 0.448713 + alpha*h 1.013654 + L2reg 0.93 + L1reg 0.06 ; SHD = 20 ; DAG True
+total norm for a microbatch 8.63891283177303 clip 1.3159464393356557
+total norm for a microbatch 47.90049173378795 clip 3.519055779150262
+total norm for a microbatch 59.041105011696125 clip 4.965123283558967
+total norm for a microbatch 16.584769109680572 clip 14.524635345636668
+total norm for a microbatch 12.017725773180276 clip 14.195217802550175
+total norm for a microbatch 19.463627628087142 clip 14.772359096143534
+total norm for a microbatch 13.990252583096545 clip 14.890703440021026
+total norm for a microbatch 10.335125381382612 clip 15.818216796321533
+total norm for a microbatch 27.0805115006012 clip 15.09319252728815
+total norm for a microbatch 27.30244300917438 clip 14.149171070904499
+cuda
+Objective function 10.14 = squared loss an data 8.48 + 0.5*rho*h**2 0.135940 + alpha*h 0.557930 + L2reg 0.91 + L1reg 0.05 ; SHD = 20 ; DAG True
+Proportion of microbatches that were clipped  0.7990279465370596
+iteration 1 in inner loop, alpha 10.700169199617104 rho 100.0 h 0.05214214631030245
+noise_multiplier  0.5  noise_multiplier_b  2.5  noise_multiplier_delta  0.502518907629606
+cuda
+Objective function 11.36 = squared loss an data 8.48 + 0.5*rho*h**2 1.359402 + alpha*h 0.557930 + L2reg 0.91 + L1reg 0.05 ; SHD = 20 ; DAG True
+total norm for a microbatch 39.33021060948592 clip 15.830489590662642
+total norm for a microbatch 33.038457609468026 clip 15.098606697806838
+total norm for a microbatch 21.978228676797613 clip 14.42397788155049
+total norm for a microbatch 25.49541238080632 clip 15.247452234030296
+total norm for a microbatch 19.25183879569068 clip 15.989995135525735
+total norm for a microbatch 15.471692389002719 clip 14.689057783120239
+total norm for a microbatch 17.26901200698871 clip 13.92178684715586
+total norm for a microbatch 25.579886258266097 clip 14.190421456241813
+total norm for a microbatch 16.803825378383312 clip 14.20775605820711
+cuda
+Objective function 10.44 = squared loss an data 9.11 + 0.5*rho*h**2 0.229152 + alpha*h 0.229070 + L2reg 0.83 + L1reg 0.05 ; SHD = 20 ; DAG True
+Proportion of microbatches that were clipped  0.8035402444832513
+iteration 2 in inner loop, alpha 10.700169199617104 rho 1000.0 h 0.021408046801809633
+iteration 3 in outer loop, alpha = 32.10821600142674, rho = 1000.0, h = 0.021408046801809633
+cuda
+noise_multiplier  0.5  noise_multiplier_b  2.5  noise_multiplier_delta  0.502518907629606
+cuda
+Objective function 10.90 = squared loss an data 9.11 + 0.5*rho*h**2 0.229152 + alpha*h 0.687374 + L2reg 0.83 + L1reg 0.05 ; SHD = 20 ; DAG True
+total norm for a microbatch 19.702679577741193 clip 1.4645634957720302
+total norm for a microbatch 14.137265192405682 clip 15.35863040538821
+total norm for a microbatch 20.067526961478684 clip 15.95175550501806
+total norm for a microbatch 17.500960460444052 clip 15.189138794767613
+total norm for a microbatch 20.464306110727374 clip 14.822646776430314
+total norm for a microbatch 10.637666013516412 clip 14.388466146249403
+total norm for a microbatch 20.842451794901187 clip 15.581546279299397
+total norm for a microbatch 19.572214943048333 clip 14.102754202490535
+total norm for a microbatch 31.307274402888872 clip 14.66199736382005
+total norm for a microbatch 19.18275483330859 clip 14.331458393709301
+total norm for a microbatch 35.46946792156338 clip 13.740842513170277
+total norm for a microbatch 26.33694722139902 clip 14.279975516185946
+total norm for a microbatch 8.789739936265594 clip 14.746672980510924
+total norm for a microbatch 27.185944406120697 clip 15.623864559864742
+cuda
+Objective function 10.50 = squared loss an data 9.18 + 0.5*rho*h**2 0.078735 + alpha*h 0.402916 + L2reg 0.79 + L1reg 0.06 ; SHD = 16 ; DAG True
+Proportion of microbatches that were clipped  0.8019589106545628
+iteration 1 in inner loop, alpha 32.10821600142674 rho 1000.0 h 0.012548677821614618
+noise_multiplier  0.5  noise_multiplier_b  2.5  noise_multiplier_delta  0.502518907629606
+cuda
+Objective function 11.21 = squared loss an data 9.18 + 0.5*rho*h**2 0.787347 + alpha*h 0.402916 + L2reg 0.79 + L1reg 0.06 ; SHD = 16 ; DAG True
+total norm for a microbatch 19.253618429644145 clip 12.708746445684726
+total norm for a microbatch 12.9207532599912 clip 15.381992477375757
+total norm for a microbatch 20.8913983206105 clip 16.21359649843429
+total norm for a microbatch 16.153985002791426 clip 14.160209967773035
+total norm for a microbatch 10.637063477006132 clip 13.934691356161732
+total norm for a microbatch 23.218977685065333 clip 15.262161722532761
+total norm for a microbatch 28.80609944961162 clip 14.669858285856185
+total norm for a microbatch 13.638155780999401 clip 14.760228119739944
+total norm for a microbatch 26.783349360755196 clip 14.84258220579747
+total norm for a microbatch 21.01243896403267 clip 14.357550684389496
+total norm for a microbatch 23.48001355378558 clip 14.126597530946544
+total norm for a microbatch 27.699497325736075 clip 14.693522161872027
+cuda
+Objective function 10.46 = squared loss an data 9.37 + 0.5*rho*h**2 0.140467 + alpha*h 0.170184 + L2reg 0.72 + L1reg 0.06 ; SHD = 18 ; DAG True
+Proportion of microbatches that were clipped  0.8025938892425207
+iteration 2 in inner loop, alpha 32.10821600142674 rho 10000.0 h 0.005300324787677724
+iteration 4 in outer loop, alpha = 85.11146387820398, rho = 10000.0, h = 0.005300324787677724
+cuda
+noise_multiplier  0.5  noise_multiplier_b  2.5  noise_multiplier_delta  0.502518907629606
+cuda
+Objective function 10.74 = squared loss an data 9.37 + 0.5*rho*h**2 0.140467 + alpha*h 0.451118 + L2reg 0.72 + L1reg 0.06 ; SHD = 18 ; DAG True
+total norm for a microbatch 22.972475878860443 clip 1.6855000397140403
+total norm for a microbatch 30.75679012707533 clip 14.535255876372924
+total norm for a microbatch 15.071805987306238 clip 16.00789171518224
+total norm for a microbatch 15.17664491140036 clip 15.780019325111082
+total norm for a microbatch 22.436855398247392 clip 14.675387384392097
+total norm for a microbatch 13.67729904362088 clip 13.7114961536855
+total norm for a microbatch 11.766229910929246 clip 14.910812678189217
+total norm for a microbatch 14.98193537464759 clip 15.156939495155713
+total norm for a microbatch 27.348748968056928 clip 13.961971574109397
+total norm for a microbatch 19.56447993270564 clip 14.85507223628321
+cuda
+Objective function 10.49 = squared loss an data 9.41 + 0.5*rho*h**2 0.051922 + alpha*h 0.274272 + L2reg 0.67 + L1reg 0.07 ; SHD = 14 ; DAG True
+Proportion of microbatches that were clipped  0.8004178049172425
+iteration 1 in inner loop, alpha 85.11146387820398 rho 10000.0 h 0.0032224979163046896
+noise_multiplier  0.5  noise_multiplier_b  2.5  noise_multiplier_delta  0.502518907629606
+cuda
+Objective function 10.95 = squared loss an data 9.41 + 0.5*rho*h**2 0.519225 + alpha*h 0.274272 + L2reg 0.67 + L1reg 0.07 ; SHD = 14 ; DAG True
+total norm for a microbatch 14.708021263206629 clip 16.59605398965757
+total norm for a microbatch 19.360260597226556 clip 19.81738569962133
+total norm for a microbatch 14.384886263251644 clip 19.95900967463074
+total norm for a microbatch 21.911938142296762 clip 17.55309367756263
+total norm for a microbatch 17.95694249197325 clip 18.379378924605756
+total norm for a microbatch 16.973047767487838 clip 17.522434777228018
+total norm for a microbatch 21.696723839958725 clip 14.703283520329904
+total norm for a microbatch 24.95357086366227 clip 16.334661380692147
+total norm for a microbatch 15.696302424036144 clip 15.907332653265602
+total norm for a microbatch 22.601519193895815 clip 15.97522723980987
+total norm for a microbatch 21.4363539977824 clip 23.840214289209477
+cuda
+Objective function 10.54 = squared loss an data 9.45 + 0.5*rho*h**2 0.197386 + alpha*h 0.169107 + L2reg 0.65 + L1reg 0.08 ; SHD = 19 ; DAG True
+Proportion of microbatches that were clipped  0.8071485943775101
+iteration 2 in inner loop, alpha 85.11146387820398 rho 100000.0 h 0.00198688541386538
+iteration 5 in outer loop, alpha = 2071.9968777435843, rho = 1000000.0, h = 0.00198688541386538
+Threshold 0.3
+[[0.005 0.002 0.348 0.03  0.371 0.072 0.143 0.005 0.003 0.27  0.019 0.213]
+ [1.563 0.005 0.554 0.462 0.357 0.12  0.433 0.07  0.002 0.502 0.366 0.69 ]
+ [0.01  0.004 0.003 0.017 0.009 0.009 0.021 0.007 0.004 0.017 0.018 0.022]
+ [0.144 0.01  0.21  0.005 0.061 0.037 0.467 0.028 0.003 0.364 0.005 0.198]
+ [0.009 0.007 0.547 0.098 0.005 0.03  0.192 0.011 0.004 0.503 0.016 0.134]
+ [0.075 0.037 0.549 0.078 0.129 0.003 0.205 0.072 0.018 0.121 0.073 0.11 ]
+ [0.033 0.009 0.174 0.012 0.053 0.022 0.005 0.008 0.004 0.079 0.009 0.338]
+ [0.796 0.088 0.586 0.215 0.389 0.08  0.605 0.004 0.011 0.561 0.143 0.268]
+ [0.74  1.995 0.729 1.248 0.731 0.28  0.776 0.46  0.004 0.887 2.386 0.946]
+ [0.017 0.005 0.249 0.012 0.011 0.039 0.072 0.008 0.004 0.006 0.009 0.054]
+ [0.358 0.018 0.188 1.221 0.226 0.066 0.325 0.041 0.002 0.389 0.005 0.7  ]
+ [0.034 0.007 0.175 0.022 0.06  0.044 0.017 0.018 0.003 0.095 0.007 0.005]]
+[[0.    0.    0.348 0.    0.371 0.    0.    0.    0.    0.    0.    0.   ]
+ [1.563 0.    0.554 0.462 0.357 0.    0.433 0.    0.    0.502 0.366 0.69 ]
+ [0.    0.    0.    0.    0.    0.    0.    0.    0.    0.    0.    0.   ]
+ [0.    0.    0.    0.    0.    0.    0.467 0.    0.    0.364 0.    0.   ]
+ [0.    0.    0.547 0.    0.    0.    0.    0.    0.    0.503 0.    0.   ]
+ [0.    0.    0.549 0.    0.    0.    0.    0.    0.    0.    0.    0.   ]
+ [0.    0.    0.    0.    0.    0.    0.    0.    0.    0.    0.    0.338]
+ [0.796 0.    0.586 0.    0.389 0.    0.605 0.    0.    0.561 0.    0.   ]
+ [0.74  1.995 0.729 1.248 0.731 0.    0.776 0.46  0.    0.887 2.386 0.946]
+ [0.    0.    0.    0.    0.    0.    0.    0.    0.    0.    0.    0.   ]
+ [0.358 0.    0.    1.221 0.    0.    0.325 0.    0.    0.389 0.    0.7  ]
+ [0.    0.    0.    0.    0.    0.    0.    0.    0.    0.    0.    0.   ]]
+{'fdr': 0.4722222222222222, 'tpr': 0.7916666666666666, 'fpr': 0.40476190476190477, 'f1': 0.6333333333333333, 'shd': 19, 'npred': 36, 'ntrue': 24}
+[2.074e-03 3.478e-01 2.987e-02 3.711e-01 7.227e-02 1.430e-01 5.325e-03
+ 2.666e-03 2.700e-01 1.889e-02 2.130e-01 1.563e+00 5.543e-01 4.619e-01
+ 3.565e-01 1.200e-01 4.327e-01 6.959e-02 1.668e-03 5.016e-01 3.658e-01
+ 6.900e-01 1.031e-02 4.073e-03 1.666e-02 9.343e-03 8.870e-03 2.050e-02
+ 6.826e-03 3.842e-03 1.695e-02 1.756e-02 2.156e-02 1.441e-01 9.681e-03
+ 2.103e-01 6.103e-02 3.662e-02 4.675e-01 2.751e-02 2.666e-03 3.637e-01
+ 4.644e-03 1.976e-01 9.356e-03 7.298e-03 5.473e-01 9.840e-02 3.012e-02
+ 1.919e-01 1.144e-02 4.304e-03 5.026e-01 1.632e-02 1.336e-01 7.508e-02
+ 3.737e-02 5.486e-01 7.778e-02 1.288e-01 2.055e-01 7.174e-02 1.842e-02
+ 1.207e-01 7.304e-02 1.097e-01 3.337e-02 8.678e-03 1.737e-01 1.244e-02
+ 5.292e-02 2.214e-02 7.568e-03 3.885e-03 7.909e-02 8.932e-03 3.384e-01
+ 7.959e-01 8.840e-02 5.863e-01 2.151e-01 3.892e-01 8.010e-02 6.048e-01
+ 1.075e-02 5.608e-01 1.427e-01 2.680e-01 7.402e-01 1.995e+00 7.286e-01
+ 1.248e+00 7.306e-01 2.801e-01 7.758e-01 4.605e-01 8.866e-01 2.386e+00
+ 9.463e-01 1.688e-02 5.353e-03 2.491e-01 1.197e-02 1.133e-02 3.865e-02
+ 7.221e-02 7.588e-03 4.260e-03 9.385e-03 5.377e-02 3.581e-01 1.829e-02
+ 1.883e-01 1.221e+00 2.255e-01 6.624e-02 3.250e-01 4.128e-02 2.211e-03
+ 3.893e-01 6.998e-01 3.404e-02 7.385e-03 1.754e-01 2.213e-02 6.002e-02
+ 4.443e-02 1.685e-02 1.824e-02 3.478e-03 9.484e-02 7.020e-03]
+[[0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 0.]
+ [1. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 1.]
+ [0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0.]
+ [0. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0.]
+ [0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0.]
+ [0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+ [1. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0.]
+ [0. 1. 0. 1. 0. 0. 1. 0. 0. 1. 1. 0.]
+ [0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0.]
+ [0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1.]
+ [0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0.]]
+[0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0.
+ 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 0.
+ 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.
+ 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 1. 0.
+ 1. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0.
+ 1. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0.]
+aucroc, aucpr (0.8364197530864198, 0.6829184118218801)
+Iterations 2500
+Achieves (24.160548736236485, 1e-05)-DP

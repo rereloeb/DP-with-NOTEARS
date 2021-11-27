@@ -1,0 +1,11 @@
+samples  5000  SCM  10 2 RE mim  minibatch size  50  noise  0.6  minibatches per NN training  250  DP methodology  plain_vanilla 8  box penalty  0
+cpu
+max degree  2.0  complexity indicator 1  625.0  complexity indicator 2  1086.9565217391305  complexity indicator 3  108.69565217391305
+model created without box penalty
+model created without box penalty
+cpu
+iteration 1 in inner loop,alpha 0.0 rho 1.0 h 1.1601221069006407
+iteration 1 in outer loop, alpha = 1.1601221069006407, rho = 1.0, h = 1.1601221069006407
+model created without box penalty
+cpu
+iteration 1 in inner loop,alpha 1.1601221069006407 rho 1.0 h 0.697926845742554
