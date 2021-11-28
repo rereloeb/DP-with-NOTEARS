@@ -262,7 +262,7 @@ def run(n, d, s0, graph_type, sem_type, Mb, noisemult, minibatches_per_NN_traini
         #if param.requires_grad:
             #print (name, param.data)
 
-    return eps, auc[0]-auc_DP[0], auc[1]-auc_DP[1]
+    return eps, auc[0]-auc_DP[0], auc[1]-auc_DP[1], auc_DP[0], auc_DP[1]
 
 
 if __name__ == '__main__':
