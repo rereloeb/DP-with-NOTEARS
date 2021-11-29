@@ -129,7 +129,7 @@ if __name__ == '__main__':
     #ipdb.set_trace()
 
     print(results)
-    plot(results, './outputs/simulation1.png')
-    save_res(results, './outputs/simulation1.txt')
+    plot(results, './outputs/simulation2.png')
+    save_res(results, './outputs/simulation2.txt')
 
 
