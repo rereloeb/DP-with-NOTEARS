@@ -13,7 +13,7 @@ np.set_printoptions(precision=3)
 
 #all parameters of the run function in nonlinear.py
 n = 5000
-d = 10
+d = 30
 s0 = 2
 graph_type = 'RE'
 sem_type = 'mim'
@@ -27,7 +27,7 @@ boxpenalty = 0
 
 #parameters I am playing with in this simulation
 methodology_array = ['plain_vanilla','group_clipping','adaclip','adap_quantile','adaclip_and_adap_quantile','group_clipping_and_adap_quantile']
-clip_array = ['12', '8 2 6 3', '0', '0', '0', '0']
+clip_array = ['60', '200 3 15 8', '0', '0', '0', '0']
 noisemult_array = [0.6, 0.8, 1.0, 1.2]
 
 
