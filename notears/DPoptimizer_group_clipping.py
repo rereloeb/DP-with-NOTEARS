@@ -36,8 +36,7 @@ def make_optimizer_class(cls):
             if r < 0.001:
                 print("Grad norm per param group for one microbatch")
             for group in self.param_groups:
-                for param, accum_grad, clip, n1, n2 in zip( group['params'], group['accum_grads'], group['l2_norm_clips'], group['nbmb'],
-                    group['nbclip']):
+                for param, accum_grad, clip, n1, n2 in zip( group['params'], group['accum_grads'], group['l2_norm_clips'], group['nbmb'], group['nbclip']):
                     if param.requires_grad:
                         total_norm = param.grad.data.norm(2).item()
                         if r < 0.001:

@@ -14,10 +14,12 @@ def make_optimizer_class(cls):
             self.noise_multiplier = noise_multiplier
             self.microbatch_size = microbatch_size
             self.minibatch_size = minibatch_size
-
+            
+            device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+            
             for group in self.param_groups:
                 group['accum_grads'] = [torch.zeros_like(param.data) if param.requires_grad else None for param in group['params']]
-                group['l2_norm_clips'] = [torch.ones(1) if param.requires_grad else None for param in group['params']]
+                group['l2_norm_clips'] = torch.cat( [torch.ones(1) if param.requires_grad else None for param in group['params']] ).to(device)
                 group['nbmb'] = [torch.zeros(1) if param.requires_grad else None for param in group['params']]
                 group['nbclip'] = [torch.zeros(1) if param.requires_grad else None for param in group['params']]
                 group['b'] = [torch.zeros(1) if param.requires_grad else None for param in group['params']]
@@ -38,12 +40,11 @@ def make_optimizer_class(cls):
             if r < 0.001:
                 print("Grad norm per param group for one microbatch")
             for group in self.param_groups:
-                for param, accum_grad, clip, n1, n2, b in zip( group['params'], group['accum_grads'], group['l2_norm_clips'], group['nbmb'],
-                    group['nbclip'],group['b']):
+                for param, accum_grad, clip, n1, n2, b in zip( group['params'], group['accum_grads'], group['l2_norm_clips'], group['nbmb'], group['nbclip'],group['b']):
                     if param.requires_grad:
                         total_norm = param.grad.data.norm(2).item()
                         if r < 0.001:
-                            print("norm ",total_norm," clip ",clip)
+                            print("norm ",total_norm," clip ",clip.item())
                         clip_coef = min( clip / (total_norm + 1e-6) , 1.0 )
                         n1.add_(1)
                         if total_norm + 1e-12 > clip :
