@@ -15,7 +15,7 @@ def make_optimizer_class(cls):
             self.nbmb = 0
             self.nbclip = 0
 
-            self.gamma = 0.25 #0.1 better ?
+            self.gamma = 0.25
             self.b = 0.0
             self.noise_multiplier_b = minibatch_size / microbatch_size / 20.0
             self.noise_multiplier_delta = ( noise_multiplier**(-2) - (2*self.noise_multiplier_b)**(-2) )**(-0.5)

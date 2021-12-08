@@ -53,33 +53,11 @@ def point_est(methodology, clip, noisemult):
 #plotting results
 def plot(results,outfile):
 
-    nrows = 2
+    nrows = 1
     ncols = 2
-    fig = plt.figure(figsize=(13, 13))
+    fig = plt.figure(figsize=(13, 7))
 
     ax = fig.add_subplot(nrows, ncols, 1)
-    legend=[]
-    for method, res_method in results.items():
-        plt.plot(res_method[0],res_method[1])
-        legend.append(method)
-    plt.xscale('log')
-    plt.title('delta_AUC_ROC')
-    plt.ylabel('delta_AUC_ROC')
-    plt.xlabel('epsilon')
-    plt.legend(legend, loc='upper right');  
-
-    ax = fig.add_subplot(nrows, ncols, 2)
-    legend=[]
-    for method, res_method in results.items():
-        plt.plot(res_method[0],res_method[2])
-        legend.append(method)
-    plt.xscale('log')
-    plt.title('delta_AUC_PR')
-    plt.ylabel('delta_AUC_PR')
-    plt.xlabel('epsilon')
-    plt.legend(legend, loc='upper right');  
-
-    ax = fig.add_subplot(nrows, ncols, 3)
     legend=[]
     for method, res_method in results.items():
         plt.plot(res_method[0],res_method[3])
@@ -88,18 +66,18 @@ def plot(results,outfile):
     plt.title('DP_AUC_ROC')
     plt.ylabel('DP_AUC_ROC')
     plt.xlabel('epsilon')
-    plt.legend(legend, loc='upper left');  
+    plt.legend(legend, loc='best');  
 
-    ax = fig.add_subplot(nrows, ncols, 4)
+    ax = fig.add_subplot(nrows, ncols, 2)
     legend=[]
     for method, res_method in results.items():
-        plt.plot(res_method[0],res_method[4])
+        plt.plot(res_method[0],res_method[1])
         legend.append(method)
     plt.xscale('log')
-    plt.title('DP_AUC_PR')
-    plt.ylabel('DP_AUC_PR')
+    plt.title('delta_AUC_ROC')
+    plt.ylabel('delta_AUC_ROC')
     plt.xlabel('epsilon')
-    plt.legend(legend, loc='upper left');  
+    plt.legend(legend, loc='best');  
 
     plt.savefig(outfile, bbox_inches='tight')
 

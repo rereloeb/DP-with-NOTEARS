@@ -88,10 +88,13 @@ def DP_dual_ascent_step(model, X, boxpenalty, method, Mb, noisemult, minibatches
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     print(device)
 
-#DP Adam optimizer creation
-    learnrate = 0.01 #for plain_vanilla, group_clipping and group_clipping_and_adap_quantile, lr was 0.001 and optimizer was here before merging codes
-    #DPAdam = dpopt.make_optimizer_class(torch.optim.Adam, method)
-    #optimizer = DPAdam(params=model.parameters(), lr=learnrate, l2_norm_clip=clip, noise_multiplier=noisemult, minibatch_size=Mb, microbatch_size=mb)
+#learning rate
+    if (method == 'plain_vanilla') or (method == 'group_clipping') or (method == 'group_clipping_and_adap_quantile'):
+        learnrate = 0.001
+    elif (method == 'adaclip') or (method == 'adap_quantile') or (method == 'adaclip_and_adap_quantile'):
+        learnrate = 0.01
+    else:
+        print("Problem")
 
 #initialization of the scheduler
     #scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau( optimizer, patience=5000, verbose = True )
@@ -100,6 +103,7 @@ def DP_dual_ascent_step(model, X, boxpenalty, method, Mb, noisemult, minibatches
 
     while rho < rho_max:
 
+#DP Adam optimizer creation
         DPAdam = dpopt.make_optimizer_class(torch.optim.Adam, method)
         optimizer = DPAdam(params=model.parameters(), lr=learnrate, l2_norm_clip=clip, noise_multiplier=noisemult, minibatch_size=Mb, microbatch_size=mb)
 

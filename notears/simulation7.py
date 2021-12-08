@@ -13,26 +13,26 @@ np.set_printoptions(precision=3)
 
 #all parameters of the run function in nonlinear.py
 n = 5000
-d = 30
+d = 50
 s0 = 2
 graph_type = 'RE'
 sem_type = 'mim'
 Mb = 50
 #noisemult = 0.6
-minibatches_per_NN_training = 250
+minibatches_per_NN_training = 500 #250
 #clip = '8'
 boxpenalty = 0
 #methodology = 'plain_vanilla'
 
 
 #parameters I am playing with in this simulation
-methodology_array = ['plain_vanilla','group_clipping','adaclip','adap_quantile','adaclip_and_adap_quantile','group_clipping_and_adap_quantile']
-clip_array = ['60', '200 3 15 8', '0', '0', '0', '0']
+methodology_array = ['plain_vanilla','group_clipping','adap_quantile','adaclip_and_adap_quantile'] #took off last one
+clip_array = ['600', '300 4 13 8', '0', '0'] #took off last one
 noisemult_array = [0.6, 0.8, 1.0, 1.2]
 
 
 #one calc is an average of several tries in order to reduce noise
-num_average = 4
+num_average = 1
 def point_est(methodology, clip, noisemult):
     eps_ave = []
     delta_AUC_ROC_ave = []
@@ -107,7 +107,7 @@ if __name__ == '__main__':
     #ipdb.set_trace()
 
     print(results)
-    plot(results, './outputs/simulation3.png')
-    save_res(results, './outputs/simulation3.txt')
+    plot(results, './outputs/simulation7.png')
+    save_res(results, './outputs/simulation7.txt')
 
 
