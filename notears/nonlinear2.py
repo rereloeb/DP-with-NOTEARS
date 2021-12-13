@@ -79,8 +79,6 @@ def dual_ascent_step(model, X, boxpenalty, lambda1, lambda2, lambda3, rho, alpha
 mb = 1
 delta = 1e-5
 
-#number of iterations in inner loop
-max_iter2 = 2
 
 def DP_dual_ascent_step(model, X, boxpenalty, method, Mb, noisemult, minibatches_per_NN_training, clip, lambda1, lambda2, lambda3, rho, alpha, h, rho_max, iterations, B_true):
 
@@ -96,12 +94,13 @@ def DP_dual_ascent_step(model, X, boxpenalty, method, Mb, noisemult, minibatches
     elif (method == 'adaclip') or (method == 'adap_quantile') or (method == 'adaclip_and_adap_quantile'):
         learnrate = 0.01
 
-    if h==np.inf:
-        max_iter3 = 1 #only one inner iteration for the first outer iteration
-    else:
-        max_iter3 = max_iter2
-        
-    for _ in range( 1, max_iter3 + 1 ):
+#initialization of the scheduler
+    #scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau( optimizer, patience=5000, verbose = True )
+    #lamb = lambda iterations: 0.1 if iterations % 10000 > 5000 else 1.0
+    #scheduler = torch.optim.lr_scheduler.LambdaLR( optimizer, lr_lambda = lamb, verbose = False )
+
+    while rho < rho_max:
+
 #DP Adam optimizer creation
         DPAdam = dpopt.make_optimizer_class(torch.optim.Adam, method)
         optimizer = DPAdam(params=model.parameters(), lr=learnrate, l2_norm_clip=clip, noise_multiplier=noisemult, minibatch_size=Mb, microbatch_size=mb)
@@ -130,6 +129,19 @@ def DP_dual_ascent_step(model, X, boxpenalty, method, Mb, noisemult, minibatches
                 primal_obj.backward()
                 optimizer.microbatch_step()
             optimizer.step()
+
+#scheduler step
+            #x_hat = model(x_batch)
+            #loss = squared_loss(x_hat, x_batch)
+            #h_val = model.h_func()
+            #penalty = 0.5 * rho * h_val * h_val + alpha * h_val
+            #l2_reg = 0.5 * lambda2 * model.l2_reg()
+            #l1_reg = lambda1 * model.fc1_l1_reg()
+            #bound_pen = lambda3 * model.bound_penalty()
+            #training_loss_minibatch = loss + penalty + l2_reg + l1_reg + bound_pen
+            #scheduler.step( training_loss_minibatch )
+            #scheduler.step()
+
             iterations += 1
 
         ut.show_stats(model, X, boxpenalty, lambda1, lambda2, lambda3, rho, alpha, B_true)
@@ -143,19 +155,21 @@ def DP_dual_ascent_step(model, X, boxpenalty, method, Mb, noisemult, minibatches
 
         with torch.no_grad():
             h_new = model.h_func().item()
-
         print("iteration "+str(kk)+" in inner loop, alpha "+str(alpha)+" rho "+str(rho)+" h "+str(h_new))
 
-        rho *= 5
+        if h_new > 0.25 * h:
+            rho *= 10
+        else:
+            break
         kk += 1
 
     alpha += rho * h_new
 
     return rho, alpha, h_new, iterations
 
-#number of iterations in outer loop is max_iter
+
 def notears_nonlinear(B_true, model: nn.Module, X: np.ndarray, boxpenalty: bool, method: str, Mb: int = 0, noisemult: float = 0.0, minibatches_per_NN_training: int = 0,
-    clip=[[0,0,0,0,0,0]], lambda1: float = 0., lambda2: float = 0., lambda3: float = 0., max_iter: int = 5, h_tol: float = 1e-8,
+    clip=[[0,0,0,0,0,0]], lambda1: float = 0., lambda2: float = 0., lambda3: float = 0., max_iter: int = 100, h_tol: float = 1e-8,
     rho_max: float = 1e+6, w_threshold: float = 0.3, DPflag: bool = False):
 
     rho, alpha, h, iterations = 1.0, 0.0, np.inf, 0
@@ -167,6 +181,8 @@ def notears_nonlinear(B_true, model: nn.Module, X: np.ndarray, boxpenalty: bool,
             rho, alpha, h, iterations = DP_dual_ascent_step(model, X, boxpenalty, method, Mb, noisemult, minibatches_per_NN_training, clip,
                 lambda1, lambda2, lambda3, rho, alpha, h, rho_max, iterations, B_true)
         print("iteration "+str(_)+" in outer loop, alpha = "+str(alpha)+", rho = "+str(rho)+", h = "+str(h))
+        if h <= h_tol or rho >= rho_max:
+            break
 
     W_est = model.fc1_to_adj()
     W = W_est.copy()

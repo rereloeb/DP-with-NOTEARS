@@ -233,11 +233,11 @@ def auc(B_true, B):
     #ipdb.set_trace()
     C = B[~np.eye(B.shape[0],dtype=bool)].reshape(B.shape[0],-1)
     C = C.flatten()
-    print(C)
-    print(B_true)
+    #print(C)
+    #print(B_true)
     C_true = B_true[~np.eye(B_true.shape[0],dtype=bool)].reshape(B_true.shape[0],-1)
     C_true = C_true.flatten()
-    print(C_true)
+    #print(C_true)
     return roc_auc_score(C_true, C), average_precision_score(C_true, C)
 
 
