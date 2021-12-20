@@ -13,10 +13,10 @@ np.set_printoptions(precision=3)
 
 #all parameters of the run function in nonlinear.py
 n = 5000
-d = 30
-s0 = 3
+d = 10
+s0 = 2
 graph_type = 'RE'
-sem_type = 'mim'
+sem_type = 'mlp'
 Mb = 50
 #noisemult = 0.6
 minibatches_per_NN_training = 250
@@ -27,7 +27,7 @@ boxpenalty = 0
 
 #parameters I am playing with in this simulation
 methodology_array = ['plain_vanilla','group_clipping','adaclip','adap_quantile','adaclip_and_adap_quantile','group_clipping_and_adap_quantile']
-clip_array = ['50', '50 1 12 7', '0', '0', '0', '0']
+clip_array = ['60', '50 1 15 8', '0', '0', '0', '0']
 noisemult_array = [0.6, 0.8, 1.0, 1.2]
 
 
@@ -80,7 +80,7 @@ def plot(results,outfile):
     plt.legend(legend, loc='best');  
 
     plt.savefig(outfile, bbox_inches='tight')
-    
+
 
 #saving results in a file
 def save_res(results, filename):
@@ -107,7 +107,7 @@ if __name__ == '__main__':
     #ipdb.set_trace()
 
     print(results)
-    plot(results, './outputs/simulation4.png')
-    save_res(results, './outputs/simulation4.txt')
+    plot(results, './outputs/simulation3.png')
+    save_res(results, './outputs/simulation3.txt')
 
 

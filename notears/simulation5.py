@@ -13,10 +13,10 @@ np.set_printoptions(precision=3)
 
 #all parameters of the run function in nonlinear.py
 n = 5000
-d = 30
-s0 = 4
+d = 10
+s0 = 3
 graph_type = 'RE'
-sem_type = 'mlp'
+sem_type = 'mim'
 Mb = 50
 #noisemult = 0.6
 minibatches_per_NN_training = 250
@@ -27,10 +27,8 @@ boxpenalty = 0
 
 #parameters I am playing with in this simulation
 methodology_array = ['plain_vanilla','group_clipping','adaclip','adap_quantile','adaclip_and_adap_quantile','group_clipping_and_adap_quantile']
-clip_array = ['250', '400 6 30 15', '0', '0', '0', '0']
+clip_array = ['25', '80 1 7 4', '0', '0', '0', '0']
 noisemult_array = [0.6, 0.8, 1.0, 1.2]
-
-
 
 
 #one calc is an average of several tries in order to reduce noise

@@ -146,7 +146,7 @@ def DP_dual_ascent_step(model, X, boxpenalty, method, Mb, noisemult, minibatches
 
         print("iteration "+str(kk)+" in inner loop, alpha "+str(alpha)+" rho "+str(rho)+" h "+str(h_new))
 
-        rho *= 5
+        rho *= 10
         kk += 1
 
     alpha += rho * h_new
